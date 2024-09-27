@@ -1,0 +1,35 @@
+<tool id="sincei_scfilterbarcodes" name="sincei scFilterBarcode" version="@TOOL_VERSION@+galaxy@SUFFIX_VERSION@" profile="23.2" license="MIT">
+    <description>Identifies barcodes present in a BAM files and produces a list</description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements"/>
+    <command detect_errors="exit_code"><![CDATA[
+            scFilterBarcode 
+    ]]></command>
+    <inputs>      
+        <param argument="--bamfile" type="data" format="bam" label="Input Indexed BAM file"/>
+        <param argument="--whitelist" type="data" format="tabular,txt" label="Input whitelist file" help="A single-column file containing the whitelist of barcodes to be used"/>
+        <param argument="--minHammingDist" type="integer" label="Enter minimum distance to match the barcode in whitelist." help="Note that increasing the hamming distance really slows down the barcode detection process."/>
+        <param argument="--minCount" type="integer" label="Enter Minimum no. of bins with non-zero counts, in order to report a barcode." help="Note that increasing the hamming distance really slows down the barcode detection process."/>
+        <param argument="--minMappingQuality" type="integer" optional="true" label="Enter minimum mapping quality" help="If set, only reads that have a mapping quality score of at least this are considered."/>
+        <param argument="--cellTag" type="text" label="Name of the BAM tag from which to extract barcodes"/>
+        <param argument="--blackListFileName" type="data" format="bed,gtf" label="Select the Blacklist file for excluding barcodes from output list"/>
+        <param argument="--binSize" type="integer" label="Enter bin size for calculation of coverage" help="Default:100000"/>
+    </inputs>
+    <outputs>
+        <data name="detected_barcodes" format="txt" label="${tool.name} on ${on_string}:Detected Barcodes"/>
+        <data name="rank_plot" format="png" label="${tool.name} on ${on_string}: Rank Plot"/>
+    </outputs>
+    <tests>
+        
+        
+    </tests>
+    <help><![CDATA[
+        **sincei scfilterbarcodes**
+
+              
+    ]]></help>
+    <expand macro="citations"/>
+    <expand macro="creator"/>
+</tool>

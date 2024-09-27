@@ -1,0 +1,19 @@
+<macros>
+    <token name="@TOOL_VERSION@">0.4</token>
+    <token name="@SUFFIX_VERSION@">0</token>
+    <xml name="requirements">
+        <requirements>
+            <requirement type="package" version="@TOOL_VERSION@">sincei</requirement>
+        </requirements>
+    </xml>
+    <xml name="creator">
+        <creator>
+            <organization name="Galaxy Europe" url="https://www.izw-berlin.de/en/home.html"/>
+        </creator>
+    </xml>
+    <xml name="citations">
+        <citations>
+            <citation type="doi">https://doi.org/10.1101/2024.07.27.605424</citation>
+        </citations>
+    </xml>
+</macros>
