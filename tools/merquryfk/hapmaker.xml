@@ -1,0 +1,48 @@
+<tool id="hapmaker" name="HAPmaker" version="@VERSION@+galaxy@VERSION_SUFFIX@" profile="23.02">
+    <description> A tool to generate hap-mer tables from FastK k-mer data of maternal, paternal, and child sequences</description>
+    <macros>
+        <import>macros.xml</import>
+    </macros>
+    <expand macro="requirements"/>
+    <command detect_errors="exit_code"><![CDATA[
+        ln -s $maternal maternal.ktab &&
+        ln -s $paternal paternal.ktab &&
+        ln -s $child child.ktab &&
+        ln -s $ktab_files ktab_files.zip &&
+        unzip ktab_files &&
+        HAPmaker -v 
+        -T\${GALAXY_SLOTS:-4}
+        maternal.ktab
+        paternal.ktab
+        child.ktab &&
+        zip intermediate_ktab_files _HMAKE* ._HMAKE* 
+    ]]></command>
+    <inputs>
+        <param name="maternal" type="data" format="fastk_ktab" label="Maternal" help="Maternal FastK kmer table"/>
+        <param name="paternal" type="data" format="fastk_ktab" label="Paternal" help="Paternal FastK kmer table"/>
+        <param name="child" type="data" format="fastk_ktab" label="Child" help="Child FastK kmer table"/>
+        <param name="ktab_files" type="data" format="zip" label="Select the ZIP file consisting of all intermediate Ktab file"/>
+    </inputs>
+    <outputs>
+        <data name="paternal_out" format="fastk_ktab" from_work_dir="paternal.hap.ktab" label="${tool.name} on ${on_string}: paternal hap-mers"/>
+        <data name="maternal_out" format="fastk_ktab" from_work_dir="maternal.hap.ktab" label="${tool.name} on ${on_string}: maternal hap-mers"/>
+        <data name="intermediate_ktab" format="zip" from_work_dir="intermediate_ktab_files.zip" label="${tool.name} on ${on_string}: Intermediate Ktab files"/>
+    </outputs>
+    <tests>
+        <test expect_num_outputs="3">
+            <param name="maternal" ftype="fastk_ktab" value="maternal.ktab"/>
+            <param name="paternal" ftype="fastk_ktab" value="paternal.ktab"/>
+            <param name="child" ftype="fastk_ktab" value="child.ktab"/>
+            <param name="ktab_files" ftype="zip" value="ktab_files.zip"/>
+            <output name="paternal_out" value="hapmaker_paternal.hap.ktab"/>
+            <output name="maternal_out" value="hapmaker_maternal.hap.ktab"/>
+            <output name="intermediate_ktab" ftype="zip" value="intermediate_ktab_files.zip"/>            
+        </test>
+    </tests>
+    <help><![CDATA[
+        HAPmaker generates hap-mer tables for parental datasets for merquryfk pipeline. Before running HAPplot or MerquryFK in trio mode, it is necessary to generate a table of hap-mers 
+        for both the mother and father, using FastK k-mer tables from the maternal, paternal, and child sequence data sets. 
+        The output of this process produces two k-mer tables: <mat>.hap.ktab for the maternal hap-mers and <pat>.hap.ktab for the paternal hap-mers.
+    ]]></help>
+    <expand macro="citation"/>
+</tool>
