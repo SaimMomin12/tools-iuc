@@ -1,5 +1,5 @@
 <macros>
-    <token name="@VERSION@">1.1.0</token>
+    <token name="@VERSION@">1.1.1</token>
     <token name="@VERSION_SUFFIX@">0</token>
     <token name="@PLOTS@">
         -w${width}
