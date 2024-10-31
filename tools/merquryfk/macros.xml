@@ -15,7 +15,7 @@
         #end if 
     </token>
     <token name="@GRAPHS@">
-         #for $graph in $graphs:
+        #for $graph in $graphs:
             $graph
         #end for
     </token>
@@ -61,7 +61,7 @@
         </param>
     </xml>
     <xml name="pdf">
-        <param argument="--pdf" type="boolean" label="Output format" truevalue="--pdf" falsevalue="" help="Output in pdf format if true, png if false"/>
+        <param argument="-pdf" type="boolean" label="PDF Output" truevalue="-pdf" falsevalue="" help="Output in pdf format if true, png if false"/>
     </xml>
     <xml name="description">
         <description>part of MERQURY.FK</description>
