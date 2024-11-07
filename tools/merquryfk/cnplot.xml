@@ -5,8 +5,8 @@
     </macros>
     <expand macro="requirements"/>
     <command detect_errors="exit_code"><![CDATA[
-        ln -s $reads maternal.ktab &&
-        ln -s $assembly maternal.fastq &&
+        ln -s $reads input.ktab &&
+        ln -s $assembly input.fastq &&
         ln -s $fastk_ktab_files ktab_files.tar.gz &&
         tar -xf ktab_files.tar.gz -C '.' &&
         CNplot
@@ -15,8 +15,8 @@
         @GRAPHS@
         $pdf
         -T\${GALAXY_SLOTS:-1}
-        maternal.ktab
-        maternal.fastq
+        input.ktab
+        input.fastq
         output
     ]]></command>
     <inputs>
@@ -41,7 +41,7 @@
     <tests>
         <test expect_num_outputs="1">
             <param name="reads" value="maternal.ktab"/>
-            <param name="fastk_ktab_files" ftype="tar" value="fastk_intermediate_ktab.tar.gz"/>
+            <param name="fastk_ktab_files" ftype="tar" value="cnplot_ktab.tar.gz"/>
             <param name="assembly" value="maternal.fastq"/>
             <param name="width" value="6.0"/>
             <param name="height" value="4.5"/>
@@ -60,7 +60,7 @@
         </test>
         <test expect_num_outputs="1">
             <param name="reads" value="maternal.ktab"/>
-            <param name="fastk_ktab_files" ftype="tar" value="fastk_intermediate_ktab.tar.gz"/>
+            <param name="fastk_ktab_files" ftype="tar" value="cnplot_ktab.tar.gz"/>
             <param name="assembly" value="maternal.fastq"/>
             <param name="width" value="6.0"/>
             <param name="height" value="4.5"/>
@@ -72,9 +72,9 @@
                 <param name="max_y" value="1"/>
             </conditional>
             <output_collection name="outputs_pdf">
-                <element name="output.fl" file="output.ln.pdf" ftype="pdf"/>
+                <element name="output.fl" file="output.fl.pdf" ftype="pdf"/>
                 <element name="output.ln" file="output.ln.pdf" ftype="pdf"/>
-                <element name="output.st" file="output.ln.pdf" ftype="pdf"/>
+                <element name="output.st" file="output.st.pdf" ftype="pdf"/>
             </output_collection>
         </test>
     </tests>
