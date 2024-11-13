@@ -29,7 +29,7 @@
     ]]></command>
     <inputs>
         <param name="maternal" type="data" format="fastk_ktab" label="Maternal Hap-mer Ktab file generated from HAPmaker"/>
-        <param name="paternal" type="data" format="ktab,hap" label="Paternal Hap-mer Ktab file generated from HAPmaker"/>
+        <param name="paternal" type="data" format="fastk_ktab" label="Paternal Hap-mer Ktab file generated from HAPmaker"/>
         <param name="hapmaker_ktab_file" type="data" format="tar.gz" label="Select the TAR file consisting of intermediate files given out from HAPmaker"/>
         <param name="assembly_1" type="data" format="fasta,fasta.gz" label="Assembly of genome" help="Must be same genome as the HAP-mer table was generated from"/>
         <param name="assembly_2" type="data" format="fasta,fasta.gz" label="Additional assembly file" optional="true" help="Additional genome against which to compare"/>
