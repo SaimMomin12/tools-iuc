@@ -4,9 +4,8 @@
         <token name="@BINARY@">scHicInfo</token>
         <import>macros.xml</import>
     </macros>
-    <expand macro="xrefs"/>
     <expand macro="requirements" />
-    <command detect_errors="exit_code"><![CDATA[
+    <command detect_errors="exit_code"><![CDATA[ 
         @BINARY@
         --matrix '$matrix_scooler'
         >> matrices_info.txt
@@ -28,7 +27,7 @@
 Consensus matrices
 ==================
 
-scHicInfo gives information about the provided single-cell Hi-C scool file. For example:
+scHicInfo gives information about the provided single-cell Hi-C scool file. For example: 
 
 .. code-block::
 

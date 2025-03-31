@@ -4,7 +4,6 @@
         <import>macros.xml</import>
     </macros>
     <expand macro="edam"/>
-    <expand macro="xrefs"/>
     <expand macro="requirements"/>
     <stdio>
       <!-- Anything other than zero is an error -->
@@ -49,7 +48,7 @@ run
     -b '$main.b'
   #end if
   #if str($main.m) != 'None':
-    -m '$main.m'
+    -m '$main.m' 
   #end if
   $main.c
   $main.U
@@ -69,7 +68,7 @@ run10x
     -s '$main.s'
   #end if
   #if str($main.m) != 'None':
-    -m '$main.m'
+    -m '$main.m' 
   #end if
   $main.M
   -t '$main.t'
@@ -83,7 +82,7 @@ run10x
 run-smartseq2
    @LOOMOUT@
   #if str($main.m) != 'None':
-    -m '$main.m'
+    -m '$main.m' 
   #end if
   -t '$main.t'
   @SAMTOOLS_OPTS@
@@ -98,7 +97,7 @@ run-dropest
     -b '$main.b'
   #end if
   #if str($main.m) != 'None':
-    -m '$main.m'
+    -m '$main.m' 
   #end if
   -t '$main.t'
   @SAMTOOLS_OPTS@
