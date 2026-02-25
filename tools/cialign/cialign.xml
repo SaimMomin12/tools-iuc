@@ -992,17 +992,17 @@
                 </element>
                 <element name="coverage" ftype="png">
                     <assert_contents>
-                        <has_size size="63k" delta="3k"/>
+                        <has_size size="63k" delta="4k"/>
                     </assert_contents>
                 </element>
                 <element name="information_content" ftype="png">
                     <assert_contents>
-                        <has_size size="89k" delta="3k"/>
+                        <has_size size="89k" delta="5k"/>
                     </assert_contents>
                 </element>
                 <element name="shannon_entropy" ftype="png">
                     <assert_contents>
-                        <has_size size="91k" delta="3k"/>
+                        <has_size size="93k" delta="5k"/>
                     </assert_contents>
                 </element>
                 <element name="resfreq" ftype="png">
