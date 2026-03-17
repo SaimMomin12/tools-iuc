@@ -1,4 +1,4 @@
-<tool id="datasets_download_gene" name="NCBI Datasets Gene" profile="@PROFILE@" license="@LICENSE@" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@">
+<tool id="datasets_download_gene" name="NCBI Datasets Gene" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@" license="@LICENSE@" >
     <description>download gene sequences and metadata</description>
     <macros>
         <import>macros.xml</import>
