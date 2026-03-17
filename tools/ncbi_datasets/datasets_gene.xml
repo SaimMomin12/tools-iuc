@@ -63,6 +63,7 @@ dataformat
     $file_choices.kingdom_cond.kingdom_sel
     --package ncbi_dataset.zip
     --fields #echo ",".join($file_choices.kingdom_cond.report_columns)
+    --force
     > gene_data_report.tsv
 ## if ! dataformat tsv gene --package ncbi_dataset.zip > gene_data_report.tsv 2> dataformat.log; then
 ##     dataformat tsv prok-gene --package ncbi_dataset.zip > gene_data_report.tsv 2>> dataformat.log;

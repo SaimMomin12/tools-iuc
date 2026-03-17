@@ -55,6 +55,7 @@ $filters.exclude_atypical
 && dataformat tsv genome 
     --package ncbi_dataset.zip
     --fields #echo ",".join($file_choices.report_columns) 
+    --force
     > genome_data_report.tsv
 
 ## unzip and rehydrate if any data is to be downloaded (include is not None)
