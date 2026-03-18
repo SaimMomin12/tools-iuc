@@ -396,7 +396,7 @@ dataformat
                 </conditional>
             </conditional>
             <output name="gene_data_report">
-                <assert_contents>rna_fasta
+                <assert_contents>
                     <has_text text="human"/>
                     <has_n_lines n="2"/>
                     <has_n_columns n="8"/>
