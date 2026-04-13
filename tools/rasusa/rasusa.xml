@@ -1,8 +1,9 @@
-<tool id="rasusa" name="rasusa" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="22.05">
+<tool id="rasusa" name="rasusa" version="@TOOL_VERSION@+galaxy@VERSION_SUFFIX@" profile="@PROFILE@">
     <description>Randomly subsample reads to a specified coverage</description>
     <macros>
         <token name="@TOOL_VERSION@">4.0.0</token>
         <token name="@VERSION_SUFFIX@">0</token>
+        <token name="@PROFILE@">25.0</token>
         <token name="@FORMATS@">fastqsanger,fastqsanger.gz,fasta,fasta.gz</token>
         <xml name="size_units">
             <option value="b">bases</option>
@@ -52,7 +53,7 @@
 --frac $subsample.frac
 #end if
 #if $r1_ext.endswith(".gz") or $r2_ext.endswith(".gz")
---output-type g
+--compress-type g
 #end if    ]]>
     </token>
     </macros>
