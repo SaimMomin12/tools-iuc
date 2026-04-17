@@ -95,7 +95,7 @@ dataformat
                 <when value="symbol">
                     <expand macro="text_or_file" what="Gene Symbol" what_extended="NCBI Gene Symbol" help=""/>
                     <expand macro="ortholog"/>
-                    <param argument="--taxon" type="text" value="human" label="Species for gene symbol" help="NCBI taxid, common or scientific name">
+                    <param argument="--taxon" type="text" value="human" label="Species for gene symbol" help="NCBI taxonomy, common or scientific name">
                         <sanitizer invalid_char="">
                             <valid initial="string.letters">
                                 <add value=" "/>
