@@ -577,7 +577,7 @@ dataformat
         </test>
 
         <!-- 10: datasets download gene taxon human   -->
-        <!-- <test expect_num_outputs="1">
+        <test expect_num_outputs="1">
             <conditional name="query|subcommand">
                 <param name="download_by" value="taxon"/>
                 <param name="taxon_positional" value="human"/>
@@ -594,9 +594,9 @@ dataformat
                     <has_n_columns n="8"/>
                 </assert_contents>
             </output>
-        </test>  -->
+        </test>
         <!-- 11: datasets download gene taxon human (given as taxID) + \-\-fasta-filter  -->
-        <!-- <test expect_num_outputs="2">
+        <test expect_num_outputs="2">
             <conditional name="query|subcommand">
                 <param name="download_by" value="taxon"/>
                 <param name="taxon_positional" value="9606"/>
@@ -624,7 +624,7 @@ dataformat
                     <has_text text=">" n="1" />
                 </assert_contents>
             </output>
-        </test> -->
+        </test>
     </tests>
     <help><![CDATA[
 .. class:: infomark
