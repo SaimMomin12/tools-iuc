@@ -97,7 +97,7 @@ dataformat
                     <expand macro="ortholog"/>
                     <param argument="--taxon" type="text" value="human" label="Species for gene symbol" help="NCBI Taxon ID, common or scientific name">
                         <sanitizer invalid_char="">
-                            <valid initial="string.letters">
+                            <valid initial="string.letters,string.digits">
                                 <add value=" "/>
                                 <add value="-"/>
                             </valid>
