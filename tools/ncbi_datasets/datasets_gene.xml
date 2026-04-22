@@ -510,7 +510,7 @@ dataformat
                     <param name="text_or_file" value="text"/>
                     <param name="accession" value="brca1,tp53"/>
                 </conditional>
-                <param name="taxon" value="human"/>
+                <param name="taxon" value="9606"/>
             </conditional>
             <section name="file_choices">
                 <conditional name="kingdom_cond">
@@ -595,11 +595,11 @@ dataformat
                 </assert_contents>
             </output>
         </test>  -->
-        <!-- 11: datasets download gene taxon human + \-\-fasta-filter  -->
+        <!-- 11: datasets download gene taxon human (given as taxID) + \-\-fasta-filter  -->
         <!-- <test expect_num_outputs="2">
             <conditional name="query|subcommand">
                 <param name="download_by" value="taxon"/>
-                <param name="taxon_positional" value="human"/>
+                <param name="taxon_positional" value="9606"/>
             </conditional>
             <section name="file_choices">
                 <conditional name="kingdom_cond">
