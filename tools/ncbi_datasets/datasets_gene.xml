@@ -576,7 +576,7 @@ dataformat
             </assert_command>
         </test>
 
-        <!-- 10: datasets download gene taxon human   -->
+        <!-- 13: datasets download gene taxon human   -->
         <test expect_num_outputs="1">
             <conditional name="query|subcommand">
                 <param name="download_by" value="taxon"/>
@@ -584,7 +584,7 @@ dataformat
             </conditional>
             <section name="file_choices">
                 <conditional name="kingdom_cond">
-                    <param name="include" value=""/>
+                    <param name="include" value_json="null"/>
                 </conditional>
             </section>
             <output name="gene_data_report">
@@ -595,7 +595,7 @@ dataformat
                 </assert_contents>
             </output>
         </test>
-        <!-- 11: datasets download gene taxon human (given as taxID) + \-\-fasta-filter  -->
+        <!-- 14: datasets download gene taxon human (given as taxID) + \-\-fasta-filter  -->
         <test expect_num_outputs="2">
             <conditional name="query|subcommand">
                 <param name="download_by" value="taxon"/>
