@@ -7,9 +7,10 @@
     <expand macro="requirements"/>
     <expand macro="version_command"/>
     <command><![CDATA[
+set -x;
 #import re
 @SETUP_CERTIFICATES@
-datasets download gene $query.subcommand.download_by
+datasets download gene $query.subcommand.download_by --debug
 #if $query.subcommand.download_by == 'taxon':
     '$query.subcommand.taxon_positional'
 #else:
