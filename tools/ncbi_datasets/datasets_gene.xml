@@ -95,30 +95,16 @@ dataformat
                 <when value="symbol">
                     <expand macro="text_or_file" what="Gene Symbol" what_extended="NCBI Gene Symbol" help=""/>
                     <expand macro="ortholog"/>
-                    <param argument="--taxon" type="text" value="human" label="Species for gene symbol" help="NCBI Taxon ID, common or scientific name">
-                        <sanitizer invalid_char="">
-                            <valid initial="string.letters,string.digits">
-                                <add value=" "/>
-                                <add value="-"/>
-                            </valid>
-                        </sanitizer>
-                    </param>
+                    <expand macro="taxon_parameter" argument="--taxon" value="human" label="Species for gene symbol" help="NCBI Taxon ID, common or scientific name"/>
                 </when>
                 <when value="accession">
                     <expand macro="text_or_file" what="Gene Accession" what_extended="NCBI Gene Accession" help=""/>
                     <expand macro="ortholog"/>
-                    <param argument="--taxon-filter" type="text" value="" label="Limit gene sequences and annotation report file to specified taxon" help="any rank, only available for WP accessions">
-                        <sanitizer invalid_char="">
-                            <valid initial="string.letters,string.digits">
-                                <add value=" "/>
-                                <add value="-"/>
-                            </valid>
-                        </sanitizer>
-                    </param>
+                    <expand macro="taxon_parameter" argument="--taxon-filter" value="" label="Limit gene sequences and annotation report file to specified taxon" help="any rank, only available for WP accessions"/>
                     <param argument="--include-flanks-bp" type="integer" optional="true" min="0" value="" label="Length of flanking nucleotides" help="WP accessions only"/>
                 </when>
                 <when value="taxon">
-                    <expand macro="taxon_positional"/>
+                    <expand macro="taxon_parameter" argument="taxon_positional" value="" label="Enter taxon" help="e.g. human, house mouse, bos taurus, etc. or use Taxonomy ID from NCBI for greater accuracy, use species-level only not genera or larger taxa"/>
                 </when>
             </conditional>
         </section>
@@ -131,7 +117,7 @@ dataformat
                 </param>
                 <when value=""/>
                 <when value="text">
-                    <param argument="--fasta-filter" type="text" label="RefSeq nucleotide and protein accessions" help="Comma separated">
+                    <param argument="--fasta-filter" type="text" label="RefSeq nucleotide and protein accessions" help="Comma separated, Charcters other than A-Z, a-z, 0-9, _, and . will be stripped from the input.">
                         <sanitizer invalid_char="">
                             <valid initial="string.letters,string.digits">
                                 <add value=","/>

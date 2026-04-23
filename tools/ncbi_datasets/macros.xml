@@ -71,8 +71,8 @@
         </param>
     </xml>
 
-    <xml name="taxon_positional">
-        <param name="taxon_positional" type="text" label="Enter taxon" help="e.g. human, house mouse, bos taurus, etc. or use Taxonomy ID from NCBI for greater accuracy, use species-level only not genera or larger taxa">
+    <xml name="taxon_parameter" tokens="argument,value,label,help">
+        <param argument="@ARGUMENT@" type="text" value="@VALUE@" label="@LABEL@" help="@HELP@. Charcters other than A-Z, a-z, 0-9, dash and space will be stripped from the input.">
             <sanitizer invalid_char="">
                 <valid initial="string.letters,string.digits">
                     <add value=" "/>
