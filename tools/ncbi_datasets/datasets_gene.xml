@@ -109,7 +109,7 @@ dataformat
                     <expand macro="ortholog"/>
                     <param argument="--taxon-filter" type="text" value="" label="Limit gene sequences and annotation report file to specified taxon" help="any rank, only available for WP accessions">
                         <sanitizer invalid_char="">
-                            <valid initial="string.letters">
+                            <valid initial="string.letters,string.digits">
                                 <add value=" "/>
                                 <add value="-"/>
                             </valid>
@@ -135,6 +135,8 @@ dataformat
                         <sanitizer invalid_char="">
                             <valid initial="string.letters,string.digits">
                                 <add value=","/>
+                                <add value="_"/>
+                                <add value="."/>
                             </valid>
                         </sanitizer>
                     </param>
